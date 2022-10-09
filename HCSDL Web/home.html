@@ -1,0 +1,397 @@
+<!--
+    LOGIN
+-->
+
+<!DOCTYPE html>
+<html>
+<title>F.D.S - Food Delivery System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+
+
+<!--Bars-->
+<div class = "w3-top" style = "font-size: large;">
+  <div class = "w3-bar w3-lime" style = "padding-top: 8px;padding-bottom: 8px;">
+    <div class = "w3-left">
+      <a class = "w3-button" href = "https://mybk.hcmut.edu.vn/my/index.action">HCMUT</a>
+      <a class = "w3-button" href = "#">F.D.S</a>
+    </div>
+    
+    <div class = "w3-center w3-display-middle w3-hide-medium w3-hide-small"> 
+      <input id = 'input' placeholder="Search something ...">
+      <button onclick = 'search()' class="fa fa-search w3-button w3-xlarge" ></button>
+    </div>
+
+    <div class = "w3-right w3-hide-small">
+      <a href = "index.html" class = "w3-button">Login</a>
+      <a href = "#cart" class = "w3-button">Cart</a>
+    </div>
+  </div>
+</div>
+
+
+<!--Slide Show-->
+
+<div class="w3-content w3-display-container" style = "margin-top: 80px;">
+  <img class="mySlides" src="./images/bun_cha.jpg" style="width:100%;height:500px;">
+  <img class="mySlides" src="./images/com_suon.jpg" style="width:100%;height:500px;">
+  <img class="mySlides" src="./images/pho.jpg" style="width:100%;height:500px;">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+<!--Food-->
+<h1 class = "w3-center"><b>FOOD LIST</b></h1>
+
+<!--7 keyword-->
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "block_0">
+  <img id = "image_0" src="keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:30%;">
+    <b id = "name_0" >keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="alert('Successful purchase')">
+      <span id = "price_0">keyword_price</span>
+    </button>
+    <!--keyword-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="plusFood(0)">Add to cart</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "block_1">
+  <img id = "image_1" src="keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:30%;">
+    <b id = "name_1" >keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="alert('Successful purchase')">
+      <span id = "price_1">keyword_price</span>
+    </button>
+    <!--keyword-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="plusFood(1)">Add to cart</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "block_2">
+  <img id = "image_2" src="keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:30%;">
+    <b id = "name_2" >keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="alert('Successful purchase')">
+      <span id = "price_2">keyword_price</span>
+    </button>
+    <!--keyword-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="plusFood(2)">Add to cart</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "block_3">
+  <img id = "image_3" src="keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:30%;">
+    <b id = "name_3" >keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="alert('Successful purchase')">
+      <span id = "price_3">keyword_price</span>
+    </button>
+    <!--keyword-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="plusFood(3)">Add to cart</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "block_4">
+  <img id = "image_4" src="keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:30%;">
+    <b id = "name_4" >keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="alert('Successful purchase')">
+      <span id = "price_4">keyword_price</span>
+    </button>
+    <!--keyword-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="plusFood(4)">Add to cart</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "block_5">
+  <img id = "image_5" src="keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:30%;">
+    <b id = "name_5" >keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="alert('Successful purchase')">
+      <span id = "price_5">keyword_price</span>
+    </button>
+    <!--keyword-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="plusFood(5)">Add to cart</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "block_6">
+  <img id = "image_6" src="keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:30%;">
+    <b id = "name_6" >keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="alert('Successful purchase')">
+      <span id = "price_6">keyword_price</span>
+    </button>
+    <!--keyword-->
+    <button class = "w3-btn w3-teal w3-hover-blue" onclick="plusFood(6)">Add to cart</button>
+  </div>
+</div>
+
+<!--Cart-->
+<h1 id = "cart" class = "w3-center w3-container" style = "clear:left;"><b>CART</b></h1>
+
+<!--7 keyword-->
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "_block_0"> <!--Block-->
+  <img id = "_image_0" src="_keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:20%;">
+    <b id = "_name_0" >_keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <span id = "_price_0">_keyword_price</span>
+  </div>
+  <div class = "w3-center">
+    <button class = "w3-button" onclick = "reduceFood(0)">-</button>
+    <span id = "_number_0">0</span><!--Number-->
+    <button class = "w3-button" onclick = "plusFood(0)">+</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "_block_1"> <!--Block-->
+  <img id = "_image_1" src="_keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:20%;">
+    <b id = "_name_1" >_keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <span id = "_price_1">_keyword_price</span>
+  </div>
+  <div class = "w3-center">
+    <button class = "w3-button" onclick = "reduceFood(1)">-</button>
+    <span id = "_number_1">0</span><!--Number-->
+    <button class = "w3-button" onclick = "plusFood(1)">+</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "_block_2"> <!--Block-->
+  <img id = "_image_2" src="_keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:20%;">
+    <b id = "_name_2" >_keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <span id = "_price_2">_keyword_price</span>
+  </div>
+  <div class = "w3-center">
+    <button class = "w3-button" onclick = "reduceFood(2)">-</button>
+    <span id = "_number_2">0</span><!--Number-->
+    <button class = "w3-button" onclick = "plusFood(2)">+</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "_block_3"> <!--Block-->
+  <img id = "_image_3" src="_keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:20%;">
+    <b id = "_name_3" >_keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <span id = "_price_3">_keyword_price</span>
+  </div>
+  <div class = "w3-center">
+    <button class = "w3-button" onclick = "reduceFood(3)">-</button>
+    <span id = "_number_3">0</span><!--Number-->
+    <button class = "w3-button" onclick = "plusFood(3)">+</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "_block_4"> <!--Block-->
+  <img id = "_image_4" src="_keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:20%;">
+    <b id = "_name_4" >_keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <span id = "_price_4">_keyword_price</span>
+  </div>
+  <div class = "w3-center">
+    <button class = "w3-button" onclick = "reduceFood(4)">-</button>
+    <span id = "_number_4">0</span><!--Number-->
+    <button class = "w3-button" onclick = "plusFood(4)">+</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "_block_5"> <!--Block-->
+  <img id = "_image_5" src="_keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:20%;">
+    <b id = "_name_5" >_keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <span id = "_price_5">_keyword_price</span>
+  </div>
+  <div class = "w3-center">
+    <button class = "w3-button" onclick = "reduceFood(5)">-</button>
+    <span id = "_number_5">0</span><!--Number-->
+    <button class = "w3-button" onclick = "plusFood(5)">+</button>
+  </div>
+</div>
+
+<div class = "w3-container my-box w3-round-xlarge w3-margin w3-padding w3-border w3-border-black"
+  style = "display: none;" id = "_block_6"> <!--Block-->
+  <img id = "_image_6" src="_keyword_image" style="width:100%;height:60%;"> <!--Picture-->
+  <div class = "w3-padding" style="width:100%;height:20%;">
+    <b id = "_name_6" >_keyword_name</b> <!--Name-->
+  </div>
+  <div class = "w3-center">
+    <!--Price-->
+    <span id = "_price_6">_keyword_price</span>
+  </div>
+  <div class = "w3-center">
+    <button class = "w3-button" onclick = "reduceFood(6)">-</button>
+    <span id = "_number_6">0</span><!--Number-->
+    <button class = "w3-button" onclick = "plusFood(6)">+</button>
+  </div>
+</div>
+
+
+
+
+<p class = "w3-center w3-container">
+  <button onclick="purchase()"><b>Payment in cash</b></button>
+  <button onclick="purchase()"><b>Online payment</b></button>
+</p>
+
+
+
+
+<script>
+  //Data 
+  var y = [0, 0, 0, 0, 0]
+  var size = 5
+  var image_name = ['bun_cha.jpg', 'com_suon.jpg', 'pho.jpg', 'mi_hoanh_thanh.jpg', 'mi_y.jpeg']
+  let price = [35, 30, 50, 40, 55]
+  let name = ['Bún chả', 'Cơm sườn', 'Phở', 'Mì hoành thánh', 'Mì ý']
+  //data
+  for(let i = 0; i < size; i++)
+  {
+    document.getElementById('block_' + i.toString()).style.display = 'block';
+    document.getElementById('image_' + i.toString()).src='./images/' + image_name[i];
+    document.getElementById('name_' + i.toString()).innerHTML = name[i];
+    document.getElementById('price_' + i.toString()).innerHTML = price[i].toString() + '.000đ';
+  }
+  for(let i = 0; i < size; i++)
+  {
+    document.getElementById('_image_' + i.toString()).src='./images/' + image_name[i];
+    document.getElementById('_name_' + i.toString()).innerHTML = name[i];
+    document.getElementById('_price_' + i.toString()).innerHTML = price[i].toString() + '.000đ';
+  }
+  
+  function reduceFood(n)
+  {
+    if(y[n] > 0)
+      y[n]--;
+    document.getElementById('_number_' + n.toString()).innerHTML = y[n];
+    if (y[n] == 0)
+      document.getElementById('_block_' + n.toString()).style.display = 'none';
+  }
+  
+  function plusFood(n)
+  {
+    y[n]++;
+    document.getElementById('_number_' + n.toString()).innerHTML = y[n];
+    document.getElementById('_block_' + n.toString()).style.display = 'block';
+  }
+  
+  function purchase()
+  {
+    let sum_of_price = 0
+    for(let i = 0; i < y.length; i++)
+      sum_of_price += y[i] * price[i];
+    let str = sum_of_price.toString() + '.000đ\nThank you for your purchase!';
+    if (sum_of_price > 999)
+    {
+      
+      str = (Math.floor(sum_of_price / 1000)).toString() + '.' + (sum_of_price % 1000).toString() 
+      +  '.000đ\nThank you for your purchase!';
+    }    
+    alert(str);
+    for(let i = 0; i < y.length; i++)
+    {
+      y[i] = 0;
+      document.getElementById('_block_' + i.toString()).style.display = 'none';
+    }
+  }
+
+  function search()
+  {
+    var val = document.getElementById('input').value
+    tmp = val;
+    //Easy
+    var tmp;
+    for (let i = 0; i < size; i++)
+      document.getElementById('block_' + i.toString()).style.display = 'block';     
+
+
+    for (let i = 0; i < size; i++)
+    {
+      tmp = name[i].search(val);
+      if (tmp == -1)
+        document.getElementById('block_' + i.toString()).style.display = 'none';     
+    }
+  }
+
+  
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!--
+    LOGIN
+-->
+
+<!DOCTYPE html>
+<html>
+<title>F.D.S - Food Delivery System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+  
+<!--Bars-->
+<div class = "w3-top" style = "font-size: large;">
+  <div class = "w3-bar w3-lime" style = "padding-top: 8px;padding-bottom: 8px;">
+    <div class = "w3-left">
+      <a class = "w3-button" href = "https://mybk.hcmut.edu.vn/my/index.action">HCMUT</a>
+      <a class = "w3-button" href = "#">F.D.S</a>
+    </div>
+    
+    <div class = "w3-center w3-display-middle w3-hide-medium w3-hide-small"> 
+      <input id = 'input' placeholder="Search something ...">
+      <button onclick = 'search()' class="fa fa-search w3-button w3-xlarge" ></button>
+    </div>
+
+    <div class = "w3-right w3-hide-small">
+      <a href = "index.html" class = "w3-button">Login</a>
+      <a href = "#cart" class = "w3-button">Cart</a>
+    </div>
+  </div>
+</div>
+<script>
+  function search()
+  {
+    var val = document.getElementById('input').value
+    alert(val);
+  }
+</script>
+  
+  <form class="w3-container" style = "margin-top: 80px;">
+    <p>
+    <label>Email</label>
+    <input class="w3-input" type="text"></p>
+    <p>
+    <label>Password</label>
+    <input class="w3-input" type="password"></p>
+    
+  </form>
+
+  <div class = "w3-padding">
+    <a class="w3-btn w3-blue" href="type_user.html">Login</a>
+  </div>
+
+</body>
+</html>
