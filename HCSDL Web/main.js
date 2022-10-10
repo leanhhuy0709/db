@@ -120,6 +120,7 @@ function load_page(p_number){
         }
     }
     number_of_page = Math.ceil(count/number_every_page);
+    if(number_of_page == 0) number_of_page = 1;
     for(let i = number_every_page * (p_number - 1); i < number_every_page * p_number && i < arr.length; i++)
     {
         document.getElementById('block_' + arr[i].toString()).style.display = 'block';
